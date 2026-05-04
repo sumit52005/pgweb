@@ -10,11 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build Docker Image
+      # 2. Build backend
+      - name: Build Backend Image
         run: docker build -t backend ./backend
 
-      - name: Run Container
+      # 3. Build frontend
+      - name: Build Frontend Image
+        run: docker build -t frontend ./frontend
+
+      # 4. Run backend (optional test)
+      - name: Run Backend Container
         run: docker run -d -p 5000:5000 backend
+
+      # 5. Run frontend (optional test)
+      - name: Run Frontend Container
+        run: docker run -d -p 3000:3000 frontend
