@@ -17,4 +17,4 @@ jobs:
         run: docker build -t backend ./backend
 
       - name: Run Container
-        run: docker run -d -p 5002:5000 backend
+        run: docker run -d -p 5000:5000 backend
