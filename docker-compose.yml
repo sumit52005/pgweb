@@ -1,10 +1,9 @@
-
 services:
   frontend:
     build: ./frontend
     container_name: pg-frontend
     ports:
-      - "3000:80"
+      - "3000:3000"
     command: npm run dev
     networks:
       - my_network
