@@ -4,7 +4,7 @@ const app = express();
 
 // ROOT ROUTE (this fixes your problem)
 app.get("/", (req, res) => {
-  res.send("Backend server is running");
+  res.send("Backend server is running. You can now view the go through the website at http://localhost:3000");
 });
 
 // Example API
